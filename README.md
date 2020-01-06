@@ -1,2 +1,67 @@
 # julia_visualizer
+
 Music visualizations in the form of julia set fractals
+
+## Requirements
+
+- `jdk-11.0.3+`
+- `jruby-9.2.9.0+`
+- `propane gem`
+- `json gem`
+
+Currently you can ignore `illegal reflective access` warnings
+
+## Use
+
+`jruby jv_launcher.rb`
+
+Press Esc while program is running to close.
+
+## Sound Set Up
+
+This program uses audio data to generate the visual effects. Your system's default audio input device will be used. On most systems, this is the microphone. This doesn't always work well and may require high volume.
+For better results, it is recommended that you visualize the sound output of whatever you are playing on the device running this program. This can be achieved by changing your system's default recording device to a monitor of its audio output.
+
+For Windows:
+- press the windows key on your keyboard
+- type sound settings
+- press enter
+- click "Sound Control Panel" on the right side of the window
+- click the "Recording" tab
+- find "Stereo Mix"
+- enable the device if it is disabled (greyed out) by right clicking stereo mix and selecting enable
+- right click stereo mix and select "Set as Default"
+- Reopen the visualizer and it should now visualize sound playing on your device
+- (Default device can be set back to microphone by going to the same tab, right clicking Microphone, and selecting Set as Default)
+
+For Ubuntu:
+- open PulseAudio
+- Choose "Recording" tab
+- (this tab may show "No devices currently recording". In that case, open the visualizer)
+- Set the default recording device of your system or the visualizer program to "Monitor of " followed by your audio device. Usually "Monitor of Built-In Audio Analog Stereo"
+
+## Settings
+
+Fullscreen toggle will set whether the visualizer opens in fullscreen mode.
+This will span all screens when using multiple displays. Use display setting "duplicate displays" to have the whole picture on each screen.
+
+Window width and window height set the dimensions of the visualizer when not in fullscreen.
+
+## Advanced Controls
+
+- d: show rendering details
+- r: reset sound history, shape calculation, and zoom depth. (useful if the shape calculation gets stuck)
+- <: decrease fractal exponent by 1 (minimum of 2)
+- >: increase fractal exponent by 1
+- p: pause most effects
+
+while paused:
+- arrow keys: move fractal manually around screen
+- z: zoom in (shape loses definition past a magnitude of about 0.0000001)
+- x: zoom out
+
+## To-Do
+
+- add variety of coloring algorithms
+- translate for web
+- translate for android
