@@ -153,7 +153,7 @@ vec3 preFractalColor( vec2 uv )
 		float scaledDistance = distanceFromZone / ( maxRadius );
 		//quadratic decrease in color strength
 		// y = 1 - x^2
-		float scaling = ( 1.0 - ( scaledDistance * scaledDistance ) * 1.0 );
+		float scaling = ( 1.0 - ( scaledDistance * scaledDistance ) );
 		scaling = clamp( scaling, 0.0, 1.0 );
 		color = color.xyz + ( scaling * colors[i].xyz );
 
