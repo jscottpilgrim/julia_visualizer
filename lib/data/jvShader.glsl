@@ -36,7 +36,6 @@ uniform vec3 color7;
 uniform vec3 color8;
 uniform vec3 color9;
 
-//const int maxIterations = 300;
 const int numColors = 10;
 
 vec2 complexSquare( vec2 v )
@@ -74,7 +73,7 @@ float distanceEstimate( vec2 uv )
 	for ( int i = 0 ; i < maxIterations; i++ ) {
 		//z' = 2 * z * z'
 		//dz = 2.0 * vec2( z.x * dz.x - z.y * dz.y, z.x * dz.y + z.y * dz.x );
-		//z' = 3 * z * z * z'
+
 		vec2 n = z;
 		int countdown = exponent - 2;
 		while( countdown > 0 )
@@ -102,7 +101,7 @@ float distanceEstimate( vec2 uv )
 			z = c + n;
 		}
 
-		//higher escape radius for detail, 32^2
+		//higher escape radius for detail
 		if ( dot( z, z ) > escapeRadius )
 		{
 			escape = true;
@@ -141,17 +140,12 @@ vec3 preFractalColor( vec2 uv )
 	float d = sqrt( ( uv.x * uv.x ) + ( uv.y * uv.y ) );
 
 	//float maxRadius = max( resolution.x, resolution.y ) * 0.5;
-	float maxRadius = min( resolution.x, resolution.y ) * 0.5;// * 0.475;
+	float maxRadius = min( resolution.x, resolution.y ) * 0.5;
 	float step = maxRadius / 10.0;
-	//float zone = d / step;
 
 	float di = 1.0;
 	for ( int i = 0; i < numColors; i++ )
 	{
-		//normalize color
-		//glsl normalize not supported by windows, normalization moved to ruby side
-		//color[i] = normalize( color[i] );
-		
 		float zRadius = step * (di - 0.5);
 		//shortest distance from point to circle: abs( sqrt( ( x - h ) ^ 2 + ( y - k ) ^ 2 )  - r )
 		//circle centered at origin so: abs( sqrt( x ^ 2 + y ^ 2 ) - r )
@@ -159,14 +153,13 @@ vec3 preFractalColor( vec2 uv )
 		float scaledDistance = distanceFromZone / ( maxRadius );
 		//quadratic decrease in color strength
 		// y = 1 - x^2
-		float scaling = ( 1.0 - ( scaledDistance * scaledDistance ) * 1.0);
+		float scaling = ( 1.0 - ( scaledDistance * scaledDistance ) * 1.0 );
 		scaling = clamp( scaling, 0.0, 1.0 );
 		color = color.xyz + ( scaling * colors[i].xyz );
 
 		di += 1.0;
 	}
 
-	//color = clamp( color.xyz, vec3( 0.0, 0.0, 0.0 ), vec3( 1.0, 1.0, 1.0 ) );
 	//normalize color
 	float m = max( color.x, max( color.y, color.z ) );
 	if ( m >= 1.0 )
@@ -185,17 +178,19 @@ void main()
 	float fractalVal = distanceEstimate( coordinates );
 	color = color.xyz * fractalVal;
 	//alpha setting 1
-	//float alph = fractalVal * 2.0;
+	//float alph = 1.0;
 	//alpha setting 2
 	//float alph = fractalVal * 2.0;
-	//alph = alph * alph;
 	//alpha setting 3
+	//float alph = fractalVal * 2.0;
+	//alph = alph * alph;
+	//alpha setting 4
 	//float alph = fractalVal * fractalVal;
 	//alph = alph * 2.0;
-	//4
+	//alpha setting 5
 	float alph = fractalVal * 2.0;
 	alph = alph * alph;
 	alph = alph * 2.0;
 
-	gl_FragColor = vec4( color, alph ); //replace 1.0 alpha with fractalVal * 2.0 for effect
+	gl_FragColor = vec4( color, alph );
 }
