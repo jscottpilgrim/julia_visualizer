@@ -52,7 +52,7 @@ Window width and window height set the dimensions of the visualizer when not in 
 - d: show rendering details
 - r: reset sound history, shape calculation, and zoom depth. (useful if the shape calculation gets stuck)
 - <: decrease fractal exponent by 1 (minimum of 2)
-- >: increase fractal exponent by 1
+- \>: increase fractal exponent by 1
 - p: pause most effects
 
 while paused:
