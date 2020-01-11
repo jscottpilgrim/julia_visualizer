@@ -793,4 +793,4 @@ class JuliaVisualizer < Propane::App
 
 end
 
-#JuliaVisualizer.new
+JuliaVisualizer.new unless $gui_launch
