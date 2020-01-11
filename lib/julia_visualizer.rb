@@ -520,14 +520,12 @@ class JuliaVisualizer < Propane::App
 	def julia_seed_transition
 		#begin transition to new julia set using randomly generated seed, if one is available
 		if @seed_thread.status == false
-			@seed_thread.join
 			s = @seed_thread["seed"]
 			if s
 				julia_seed_transition_to(s)
 			end
 
-			@seed_thread = Thread.new{ @seed_thread["seed"] = gen_julia_seed }
-			@seed_thread.priority = 0
+			@seed_thread["seed"] = gen_julia_seed
 		end
 	end
 
