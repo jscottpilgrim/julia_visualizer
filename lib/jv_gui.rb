@@ -194,7 +194,7 @@ class JvGui < Propane::App
 	end
 
 	def setup
-		sketch_title "JV Launcher Beta"
+		sketch_title "JV Launcher"
 
 		window_x = (displayWidth / 2.0) - (width / 2.0)
 		window_y = (displayHeight / 2.0) - (height / 2.0)
