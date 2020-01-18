@@ -1,4 +1,4 @@
-Windows: Double click JuliaVisualizer.exe to open. (may take a seconds to start.)
+Windows: Double click JuliaVisualizer.exe to open. (may take a second to start.)
 
 Press Esc while program is running to close.
 
