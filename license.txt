@@ -1,6 +1,0 @@
-Copyright (C) 2019 J. P. Scott / jscottpilgrim
-
-GNU General Public License: https://www.gnu.org/licenses/gpl-3.0.en.html
-
-Minim library is included as a dependency. I own no part of it and was not involved in its development.
-Minim is licensed under LGPL (GNU Lesser General Public License)

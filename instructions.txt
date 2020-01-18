@@ -1,26 +1,21 @@
+Windows: Double click JuliaVisualizer.exe to open. (may take a seconds to start.)
+
 Press Esc while program is running to close.
 
 Sound Set up:
 	This program uses audio data to generate the visual effects. Your system's default audio input device will be used. On most systems, this is the microphone. This doesn't always work well and may require high volume.
 	For better results, it is recommended that you visualize the sound output of whatever you are playing on the device running this program. This can be achieved by changing your system's default recording device to a monitor of its audio output.
 
-	For windows:
-		press the windows key on your keyboard
-		type sound settings
-		press enter
-		click "Sound Control Panel" on the right side of the window
-		click the "Recording" tab
-		find "Stereo Mix"
-		enable the device if it is disabled (greyed out) by right clicking stereo mix and selecting enable
-		right click stereo mix and select "Set as Default"
-		Reopen the visualizer and it should now visualize sound playing on your device
-		(Default device can be set back to microphone by going to the same tab, right clicking Microphone, and selecting Set as Default)
-
-	For ubuntu:
-		open PulseAudio
-		Choose "Recording" tab
-		(this tab may show "No devices currently recording". In that case, open the visualizer)
-		Set the default recording device of your system or the visualizer program to "Monitor of " followed by your audio device. Usually "Monitor of Built-In Audio Analog Stereo"
+	- press the windows key on your keyboard
+	- type sound settings
+	- press enter
+	- click "Sound Control Panel" on the right side of the window
+	- click the "Recording" tab
+	- find "Stereo Mix"
+	- enable the device if it is disabled (greyed out) by right clicking stereo mix and selecting enable
+	- right click stereo mix and select "Set as Default"
+	- Reopen the visualizer and it should now visualize sound playing on your device
+	- (Default device can be set back to microphone by going to the same tab, right clicking Microphone, and selecting Set as Default)
 
 Settings:
 	Fullscreen toggle will set whether the visualizer opens in fullscreen mode.

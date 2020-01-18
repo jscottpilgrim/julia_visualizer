@@ -2,18 +2,11 @@
 
 Music visualizations in the form of julia set fractals
 
-## Requirements
-
-- `jdk-11.0.3+`
-- `jruby-9.2.9.0+`
-- `propane gem`
-- `json gem`
-
-Currently you can ignore `illegal reflective access` warnings
+This is the executable windows64 version, designed to be downloaded and run easily without dependencies.
 
 ## Use
 
-`jruby jv_launcher.rb`
+Double click JuliaVisualizer.exe to open. (may take a seconds to start.)
 
 Press Esc while program is running to close.
 
@@ -34,12 +27,6 @@ For Windows:
 - Reopen the visualizer and it should now visualize sound playing on your device
 - (Default device can be set back to microphone by going to the same tab, right clicking Microphone, and selecting Set as Default)
 
-For Ubuntu:
-- open PulseAudio
-- Choose "Recording" tab
-- (this tab may show "No devices currently recording". In that case, open the visualizer)
-- Set the default recording device of your system or the visualizer program to "Monitor of " followed by your audio device. Usually "Monitor of Built-In Audio Analog Stereo"
-
 ## Settings
 
 Fullscreen toggle will set whether the visualizer opens in fullscreen mode.
@@ -59,9 +46,3 @@ while paused:
 - arrow keys: move fractal manually around screen
 - z: zoom in (shape loses definition past a magnitude of about 0.0000001)
 - x: zoom out
-
-## To-Do
-
-- add variety of coloring algorithms
-- translate for web
-- translate for android
